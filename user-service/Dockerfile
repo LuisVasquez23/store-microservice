@@ -1,14 +1,7 @@
-FROM --platform=linux/arm64 node:18-alpine
-
-# Instalar dependencias necesarias para compilar módulos nativos
-RUN apk add --no-cache make gcc g++ python3
-
+FROM node:18-alpine
 WORKDIR /app
-
 COPY package*.json ./
-RUN npm install --production
-
+RUN npm install
 COPY . .
-
-EXPOSE 3001
+EXPOSE 3002
 CMD ["node", "src/index.js"]

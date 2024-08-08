@@ -1,13 +1,7 @@
-FROM --platform=linux/arm64 node:18-alpine
-
+FROM node:18-alpine
 WORKDIR /app
-
 COPY package*.json ./
-
 RUN npm install
-
 COPY . .
-
-EXPOSE 3002
-
+EXPOSE 3001
 CMD ["node", "src/index.js"]
