@@ -7,7 +7,8 @@ app.use(express.json());
 
 const createProductController = new CreateProductController();
 
-app.post('/products', createProductController.handle.bind(createProductController));
+app.get('/products', (req , res) => res.send("working products") );
+app.post('/products', (req , res) => createProductController.handle(req , res));
 
 sequelize.sync().then(() => {
     app.listen(3002, () => {

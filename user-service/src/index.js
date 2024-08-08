@@ -8,6 +8,7 @@ app.use(express.json());
 
 const createUserController = new CreateUserController();
 
+app.get("/users" , (req, res) => res.send("working users"));
 app.post("/users" , (req, res) => createUserController.handle(req, res));
 
 
