@@ -1,7 +1,9 @@
 version: "3.8"
 services:
   api-gateway:
-    build: ./api-gateway
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     depends_on:
@@ -9,11 +11,15 @@ services:
       - product-service
 
   user-service:
-    build: ./user-service
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
     ports:
       - "3001:3001"
 
   product-service:
-    build: ./product-service
+    build:
+      context: ./product-service
+      dockerfile: Dockerfile
     ports:
       - "3002:3002"
