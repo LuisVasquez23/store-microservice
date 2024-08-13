@@ -22,7 +22,7 @@ The services are orchestrated using Docker Compose, with a MySQL database for pe
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/YourUsername/store-microservice.git
+    git clone https://github.com/LuisVasquez23/store-microservice.git
     cd store-microservice
     ```
 
